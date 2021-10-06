@@ -5,27 +5,33 @@ let contraseña = prompt("Ingrese su contraseña")
 
 if ((nombreUsuario== "javiertutor") && (contraseña = "aprobadisimo")){
     alert ( "¡Bienvenido javiertutor! ¿listo para la pregunta de hoy?")
-}
-else {
+    for (let i = 1 ; i <= 3; i++) {
+        let anioRevFrancesa = parseInt(prompt("¿En qué año estalló la revolución francesa?"))
+        let intentosRestantes = 3-i
+
+        if (anioRevFrancesa == 1789) {
+            alert("CORRECTO! espero que no lo hayas googleado :/ ");
+            break;
+
+        } else if (intentosRestantes == 0){
+            alert ( "Lo siento, te quedaste sin intentos. Mejor suerte la próxima");
+            break;
+        } else if (anioRevFrancesa < 1789){
+            alert ("Mmm buen intento, pero no, todavía no había sucedido. Te quedan " + intentosRestantes + " intentos.") 
+        } else if (anioRevFrancesa > 1789){
+            alert ("Te pasaste amigo, te quedan " + intentosRestantes + " intentos.")
+        } else {
+            alert ("ERROR, ingresa un número válido. Te quedan "+ intentosRestantes + " intentos")
+        }
+        
+        
+    }
+    
+} else {
     alert("OUCH! Nombre de usuario incorrecto :(")
-}
+    }
 
-let anioRevFrancesa = parseInt(prompt("¿En qué año estalló la revolución francesa?"))
 
-if (anioRevFrancesa == 1789) {
-    alert("CORRECTO! espero que no lo hayas googleado :/ ")
-}
-
-else if (anioRevFrancesa < 1789) {
-    alert("mmmm, buen intento, pero todavía no había pasado. El año en que estalló la revolución francesa fue 1789.")
-}
-
-else if (anioRevFrancesa > 1789) {
-    alert("uy te pasaste. El año en que estalló la revolución francesa fue 1789.")
-}
-else {
-    alert("ERROR: ingresá un número de año válido")
-}
 
 
 
